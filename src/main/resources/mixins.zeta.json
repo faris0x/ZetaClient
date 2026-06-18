@@ -1,0 +1,18 @@
+{
+    "required": true,
+    "minVersion": "0.7",
+    "package": "zeta.client.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "refmap": "mixins.zeta.refmap.json",
+    "client": [
+        "MixinMinecraft",
+        "MixinMinecraftKeybinds",
+        "MixinGuiIngame",
+        "MixinGuiMainMenu",
+        "MixinRenderGlobal",
+        "MixinFpsUncap",
+        "MixinFullbright",
+        "MixinTerrainAnim",
+        "MixinFastMath"
+    ]
+}

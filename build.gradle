@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        maven { url = "https://maven.minecraftforge.net/" }
+        maven { url = "https://repo.spongepowered.org/maven/" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT"
+        classpath "org.spongepowered:mixingradle:0.6-SNAPSHOT"
+    }
+}
+
+apply plugin: "net.minecraftforge.gradle.tweaker-client"
+apply plugin: "org.spongepowered.mixin"
+apply plugin: "java"
+
+group = "zeta"
+version = "0.1.0"
+archivesBaseName = "zeta-client"
+
+sourceCompatibility = targetCompatibility = 1.8
+
+minecraft {
+    version = "1.8.9"
+    tweakClass = "zeta.client.ZetaTweaker"
+    runDir = "run"
+    mappings = "stable_22"
+}
+
+repositories {
+    mavenCentral()
+    maven { url = "https://repo.spongepowered.org/maven/" }
+}
+
+dependencies {
+    compile "org.spongepowered:mixin:0.7.11-SNAPSHOT"
+}
+
+mixin {
+    defaultObfuscationEnv = "notch"
+    add sourceSets.main, "mixins.zeta.refmap.json"
+}
+
+jar {
+    manifest {
+        attributes "TweakClass": "zeta.client.ZetaTweaker"
+        attributes "TweakOrder": "0"
+        attributes "MixinConfigs": "mixins.zeta.json"
+        attributes "Manifest-Version": "1.0"
+    }
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs)
+    copy {
+        from("src/main/resources")
+        into("build/classes/main")
+    }
+}

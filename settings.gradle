@@ -1,0 +1,10 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        maven { url = "https://maven.minecraftforge.net/" }
+        maven { url = "https://repo.spongepowered.org/maven/" }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "zeta-client"
