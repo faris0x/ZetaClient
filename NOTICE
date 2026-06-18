@@ -1,0 +1,25 @@
+Zeta Client
+Copyright 2026 Zeta Client Contributors
+
+This product includes software developed by third parties:
+
+---
+
+NanoVG (src/nanovg.c, src/nanovg.h, src/nanovg_gl.h, src/nanovg_gl_utils.h,
+src/fontstash.h)
+  Copyright (c) 2013 Mikko Mononen (memon@inside.org)
+  Licensed under the zlib license.
+
+stb_truetype.h
+  Copyright (c) 2008-2021 Sean Barrett
+  Licensed under the MIT license / public domain.
+
+stb_image.h
+  Copyright (c) 2008-2021 Sean Barrett
+  Licensed under the MIT license / public domain.
+
+---
+
+DM Sans Thin (src/main/resources/fonts/DMSans-Thin.ttf)
+  Copyright (c) 2019 Colophon Foundry, Jonatan Xavier
+  Licensed under the SIL Open Font License, Version 1.1.
